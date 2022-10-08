@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+void palindrome(int x){
+    int y,rev=0,z=x;
+    while(x>0){
+        y=x%10;
+        rev=rev*10+y;
+        x=x/10;
+    }
+    if(rev==z) cout<<"true"<<endl;
+    else cout<<"false"<<endl;
+}
+int main()
+{
+    int x;
+    cin>>x;
+    if(x<0||x%10==0) cout<<"false"<<endl;
+    else if(x==0) cout<<"true"<<endl;
+    else{
+        palindrome(x);
+    }
+    return 0;
+}
