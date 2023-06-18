@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+int findLastOccurance(int *arr,int last_index ,int key){
+    int ans,l=0,r=last_index;
+    int mid;
+    while(r>=l){
+         
+         mid=(l+r)/2;
+         
+        if(arr[mid]==key)
+        {
+            ans=mid;
+            l=++mid;
+        }
+        else if(arr[mid]>key)
+        {
+            r=--mid;
+        }
+        else{
+            
+            l=++mid;
+        }
+    }
+    return ans;
+}
+int findFirstOccurance(int *arr,int last_index ,int key){
+    int ans,l=0,r=last_index;
+    int mid;
+    while(r>=l){
+         
+         mid=(l+r)/2;
+         
+        if(arr[mid]==key)
+        {
+            ans=mid;
+            r=--mid;
+        }
+        else if(arr[mid]>key)
+        {
+            r=--mid;
+        }
+        else{
+            
+            l=++mid;
+        }
+    }
+    return ans;
+}
+int main()
+{
+   int n;
+   int arr[]={1,2,3,3,3,4};
+   cout<<"the Last Occurance of "<<"3"<<" is "<<findLastOccurance(arr,5,3)<<endl<<"the First Occurance of "<<"3"<<" is "<<findFirstOccurance(arr,5,3)<<endl;
+    
+    return 0;
+}
