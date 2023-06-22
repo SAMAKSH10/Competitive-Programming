@@ -1,0 +1,20 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int get_pivot(vector<int>& arr)
+{
+    int l=0,r=arr.size()-1,mid;
+    while(l<r) {
+        mid=(l+r)/2;
+        if(arr[mid] >=arr[0])l=mid+1;
+        else r=mid;
+    }
+    return l;
+}
+int main()
+{
+    vector<int>c= {4,5,1,2,3};
+    cout<<get_pivot(c);
+
+    return 0;
+}
